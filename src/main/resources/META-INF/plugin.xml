@@ -1,14 +1,14 @@
 <idea-plugin>
   <id>com.martingruner.diffanything</id>
   <name>Compare with Diff Anything</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <vendor url="https://martingruner.com" email="marketing@elkest.ee">Gruner Software</vendor>
   <description><![CDATA[
     <p>Open two local files or folders in Diff Anything from your IDE, or compare a saved file with its Git HEAD version.</p>
     <p>Requires the separately installed Diff Anything 1.6.1 or later on macOS or Windows. The plugin is free; comparisons use your desktop app's Free or Pro features and limits. Purchase or restore Pro in the desktop app.</p>
     <p>Files stay on your computer. No network requests, analytics, or AI processing. Git comparisons create a local snapshot; snapshots older than seven days are removed on a later Git comparison.</p>
   ]]></description>
-  <idea-version since-build="262" until-build="262.*"/>
+  <idea-version since-build="262"/>
   <depends>com.intellij.modules.platform</depends>
   <actions>
     <group id="DiffAnything.Group" text="Diff Anything" popup="true">

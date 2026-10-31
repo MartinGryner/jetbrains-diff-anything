@@ -6,7 +6,7 @@ Open two local files or folders in Diff Anything, or compare a saved file with i
 
 ## Requirements
 
-- A local JetBrains IDE using platform 2026.2 (build 262). The initial verification target is WebStorm 2026.2.3. Other IDEs and remote development sessions have not been tested.
+- A local JetBrains IDE using platform 2026.2 (build 262) or newer. WebStorm 2026.2.3 is the verified baseline. The plugin descriptor has no upper IDE build limit; later IDE releases are not blocked by Marketplace metadata, but have not all been independently tested. Other IDEs and remote development sessions have not been tested.
 - Diff Anything 1.6.1 or later installed separately. macOS 13 or later, or Windows 10 build 17763 or later, are the desktop app's packaging minimums; the IDE may require a newer operating system.
 - Git on the IDE's PATH for the Git HEAD command.
 
@@ -38,14 +38,14 @@ Python 3, a JDK with `java` and `javac` supporting Java 21, Git, and an extracte
 python3 build.py --ide /path/to/WebStorm.app/Contents --jdk /path/to/jdk
 ```
 
-The script compiles the plugin, creates `build/compare-with-diff-anything-0.1.0.zip`, and runs integration tests with a temporary Git repository. No SDK files are bundled in the plugin.
+The script validates the descriptor, compiles the plugin, creates `build/compare-with-diff-anything-0.1.1.zip`, and runs integration tests with a temporary Git repository. No SDK files are bundled in the plugin.
 
 Run the [official JetBrains Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) on the resulting archive:
 
 ```sh
 java -Dplugin.verifier.home.dir=/tmp/diff-anything-verifier \
   -jar /path/to/verifier-cli-all.jar check-plugin \
-  build/compare-with-diff-anything-0.1.0.zip /path/to/WebStorm.app/Contents \
+  build/compare-with-diff-anything-0.1.1.zip /path/to/WebStorm.app/Contents \
   -verification-reports-dir build/verifier -runtime-dir /path/to/jdk
 ```
 
